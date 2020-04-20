@@ -1,8 +1,12 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 
 const App = () => {
-    return <div>Hi There</div>
+    window.navigator.geolocation.getCurrentPosition(
+position => console.log(position),
+err => console.log(err) 
+    );
+    return <div>Hi There!</div>
 };
 
-ReactDom.render(<App />, document.querySelector('#root'));
+ReactDOM.render(<App />, document.querySelector('#root'));
